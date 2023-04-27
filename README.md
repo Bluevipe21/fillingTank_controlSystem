@@ -20,5 +20,17 @@ where R is the resistance from the valve used to discharge the tank. The value o
 
 $\Delta P = Lf\frac{\rho}{2}\frac{v^{2}}{2}$
 
-where $L$ is the longitude from the pipe for the output valve. $\rho$ is the density of the liquid, $v$ is the velocity of the flow, $D$ is the diameter of the pipe (connected with the valve), and $f$ is the friction factor. 
+where $L$ is the longitude from the pipe for the output valve. $\rho$ is the density of the liquid, $v$ is the velocity of the flow, $D$ is the diameter of the pipe (connected with the valve), and $f$ is the friction factor. The friction factor can be calculated using the Colebrook-White equation or using a Moody diagram. Using the Moody diagram you only need to calculate the Reynolds number and the relative roughness that dependes of the material of the pipe.
+
+$Reynolds number = \frac{\rho v D}{\mu}$
+
+$roughness = \frac{\epsilon}{D}$
+
+After doing this calculations you can check the values in the next graphic:
+
+
+
+
+
+
 
