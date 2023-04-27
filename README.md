@@ -30,18 +30,17 @@ After performing these calculations, the values can be checked on the graph belo
 
 ![Moody Diagram](Moody_diagram.png)
 
-You have to draw a vertical line (green) depending on the Reynolds number you obtained and a horizontal line (green) depending on the value of relative roughness you have on the pipe. The joint between the lines are the friction factor. Also, don´t forget that the Reynolds number tells you if the flow is laminar, in transition (between laminar and turbulent) or is in complete turbulence. 
+To determine the friction factor, draw a green vertical line corresponding to the Reynolds number obtained and a green horizontal line for the value of relative roughness in the pipe. The intersection of these lines represents the friction factor. Additionally, remember that the Reynolds number indicates whether the flow is laminar, transitioning between laminar and turbulent, or fully turbulent.
 
-After using the Darcy-Weisbach the calculation of the resistance is as follows:
+After applying the Darcy-Weisbach equation, the resistance can be calculated using the equation shown below, where K is a correction factor dependent on the pipe's geometry:
 
 $R = \frac{\Delta P}{\rho v^{2}A} * K [\frac{Ns}{m^{5}}]$
 
-where K is a correction factor depending on the geometry of the pipe. 
 
-__I have to say that i am not an expert in the subject but i do my best to simulate the control system using all this information__
+__While I am not an expert in this field, I have done my best to simulate the control system using this information.__
 
 
-At the end the differential equation can be writted as:
+The differential equation for the control system can be written as:
 
 $\frac{AR}{\rho g}\frac{dh}{dt} + h = Q_{in}\frac{R}{\rho g}$
 
@@ -51,14 +50,14 @@ First i rewritte the equation leaving the term with high order from the differen
 
 \frac{dh}{dt} = \frac{Q_{in}}{A} - h(\frac{\rho g}{A R})
 
-The objective of the control system is that the liquid reach a determined height. This means that the error must be zero when the liquid reach that particular height. To do this is necessary find a Lyapunov function that helps to the system to gain energy and whose derivative indicates that the system losses energy. This means that the Lyapunov function must be positive and it´s derivative must be negative. 
+To achieve the objective of having the liquid reach a specific height, the error must be zero when the liquid reaches that height. To accomplish this, it is necessary to find a Lyapunov function that allows the system to gain energy while indicating a loss of energy through its derivative, which must be negative.
 
 - Objectives:
 
 1. $V = \frac{1}{2}e_{h}^{2} > 0$
 2. $\dot{V} = -ke_{h}^{2} < 0$
 
-The error can be written as the difference between the desired height and the actual height of the liquid. 
+To achieve this, the error can be defined as the difference between the desired and actual liquid heights, and its derivative can be found as:
 
 $e_{h}(t) = h_{d} - h(t)$
 
@@ -66,11 +65,11 @@ Whose derivative is equal to:
 
 $\dot{e_{h}}(t) = \frac{dh_{d}}{dt} - \frac{dh}{dt}$
 
-But the value in this case of the desired height is constant so it´s derivative is zero.
+However, the derivative of the desired height is zero since its value is constant.
 
 $\dot{e_{h}}(t) = - \frac{dh}{dt}$
 
-The loss of energy from the system is ideal for the previous case because the real loss of energy can be written as follows:
+In this case, the loss of energy from the system can be considered ideal, as it can be expressed as follows:
 
 $\dot{V} = e_{h}\dot{e_{h}}$
 
@@ -82,7 +81,7 @@ $\dot{e_{h}} = -ke_{h}$
 
 $-\frac{dh}{dt} = -k(h_d - h)$
 
-Now i set the differential equation in the previous equation:
+By setting the ideal loss equation equal to the actual loss equation, we obtain:
 
 $\frac{Q_{in}}{A} - h(\frac{\rho g}{A R}) = ke_{h}$
 
@@ -90,7 +89,7 @@ Where the input to the system is the input flow $Q_{in}$, so in the equation we 
 
 $Q_{in} = Ake_{h} + h(\frac{\rho g}{R})$
 
-And this is the control function i used to develop the simulation on Matlab and Simulink. The value of the resistance used is invented for test purpose, but i hope it helps to someone. 
+Here, the input flow rate is separated on one side of the equation. This is the control function that I have used to develop a simulation using Matlab and Simulink. Please note that the resistance value used is for testing purposes only, but I hope it is helpful to someone that read this.
 
 
 
