@@ -1,22 +1,22 @@
 # Filling tank - model made in MATLAB
 
-The model used for this implementation in MATLAB is based in the flow through a pipe and two valves. One valve control de input flow and the other valve only close and open to increase/decrease the height of liquid inside the tank. When the two valves are working there is an accumulation of liquid inside the tank, that can be expressed as the following equation:
+The MATLAB implementation used in this study is based on a model of fluid flow through a pipe and two valves. One valve controls the input flow, while the other valve regulates the height of the liquid in the tank by opening or closing. When both valves are in operation, liquid accumulates in the tank, and this can be expressed mathematically as follows:
 
 $Q_{in} - Q_{out} = accumulation$
 
-But the accumulation can be expressed as the volume of liquid that is changing through time due the two valves working. The change in time is because not always the valves are open or close.
+However, the accumulation of liquid can also be expressed as the volume of liquid that changes over time due to the operation of the two valves. The change in time occurs because the valves are not always open or closed.
 
 $accumulation = \frac{\Delta V}{dt}$
 
-If we use a tank, whose cross-sectional area is constant, we can write the volume as the product between the area and the height of the tank. But in this case the height will change so the result will be:
+If we consider a tank with a constant cross-sectional area, we can write the volume as the product of the area and the height of the tank. However, in this case, the height changes, and the result is:
 
 $\Delta V = A * dh$
 
-The output flow can be rewritten as the driving force in charge of push the output flow. This equation is:
+The output flow can be expressed as the driving force that pushes the liquid out of the tank. This force can be calculated using the following equation:
 
 $Q_{out} = \frac{\rho g h}{R}$
 
-where R is the resistance from the valve used to discharge the tank. The value of the resistance can be obtained using the equation of Darcy-Weisbach. 
+where R is the resistance of the valve used to discharge the tank. The value of the resistance can be determined using the Darcy-Weisbach equation:
 
 $\Delta P = Lf\frac{\rho}{2}\frac{v^{2}}{2}$
 
@@ -26,7 +26,7 @@ $Reynolds number = \frac{\rho v D}{\mu}$
 
 $roughness = \frac{\epsilon}{D}$
 
-After doing this calculations you can check the values in the next graphic:
+After performing these calculations, the values can be checked on the graph below.
 
 ![Moody Diagram](Moody_diagram.png)
 
