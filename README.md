@@ -54,7 +54,7 @@ $\frac{AR}{\rho g}\frac{dh}{dt} + h = Q_{in}\frac{R}{\rho g}$
 
 First i rewritte the equation leaving the term with high order from the differential equation in one side.
 
-\frac{dh}{dt} = \frac{Q_{in}}{A} - h(\frac{\rho g}{A R})
+$\frac{dh}{dt} = \frac{Q_{in}}{A} - h(\frac{\rho g}{A R})$
 
 To achieve the objective of having the liquid reach a specific height, the error must be zero when the liquid reaches that height. To accomplish this, it is necessary to find a Lyapunov function that allows the system to gain energy while indicating a loss of energy through its derivative, which must be negative.
 
