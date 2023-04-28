@@ -92,8 +92,11 @@ $Q_{in} = Ake_{h} + h(\frac{\rho g}{R})$
 Here, the input flow rate is separated on one side of the equation. This is the control function that I have used to develop a simulation using Matlab and Simulink. Please note that the resistance value used is for testing purposes only, but I hope it is helpful to someone that read this.
 
 
+![Evolution in time of height](Results/tankHeight.jpg)
 
+![Evolution in time of height](Results/evolutionError.jpg)
 
+![Evolution in time of height](Results/inputFlow.jpg)
 
 
 
