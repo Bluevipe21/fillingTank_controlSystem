@@ -36,6 +36,12 @@ After applying the Darcy-Weisbach equation, the resistance can be calculated usi
 
 $R = \frac{\Delta P}{\rho v^{2}A} * K [\frac{Ns}{m^{5}}]$
 
+To calculate K we have to check the corresponding value in the datasheet of the valve used. This value it depends of the flow coefficient $C_{v}$. For example for a full bore vall valve when is totally open we can use the next equation to calculate $K$:
+
+$K = \frac{C_{v}}{1.156}$
+
+This data depends on manufacturer's datasheet; Here you can see an [example](https://www.emerson.com/documents/automation/product-data-sheet-l-g-series-cv-data-en-us-175946.pdf).  
+
 
 __While I am not an expert in this field, I have done my best to simulate the control system using this information.__
 
