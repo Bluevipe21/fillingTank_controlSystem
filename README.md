@@ -105,6 +105,12 @@ Here, the input flow rate is separated on one side of the equation. This is the 
 ![Evolution in time of height](Results/inputFlow.jpg)
 
 
+This system works as a feedback network so we only need to control de input flow through the system to regulate the height in the tank. Here there is no control in the output valve. If someone has to control the output valve, as the input valve, it could be necessary apply two control functions, and each will make the system works by it's own. 
+
+And in the case of making the implementation in a PLC is necessary to work with two PID's blocks for both valves. For PLC's must of the branchs work with PI control functions because in industrial level there will be signal disturbances. And in industrial level in must of the cases it is used the feedfoward network.
+
+
+
 
 
 
