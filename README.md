@@ -109,6 +109,9 @@ This system works as a feedback network so we only need to control de input flow
 
 And in the case of making the implementation in a PLC is necessary to work with two PID's blocks for both valves. For PLC's must of the branchs work with PI control functions because in industrial level there will be signal disturbances. And in industrial level in must of the cases it is used the feedfoward network.
 
+
+## Control system using a numerical method
+
 In case of using a control system like the presented here, the integration part has to be worked with a numerical integration method. There are two options to do this:
 1) Using a estimator: Basically this method consist in work the differential part of the equation as a measure of a slope.
 
@@ -120,19 +123,24 @@ $h(t_{i+1}) - h(t_{i}) = \frac{Q_{in} \Delta t}{A} - h(t_{i}) \Delta t (\frac{\r
 
 $h(t_{i+1}) = h(t_{i})(1 - \Delta t (\frac{\rho g}{R})) + \Delta t \frac{Q_{in}(t_{i})}{A}$
 
-This final equation calculates the next value of height to be used in the control function. The results are here:
+This final equation calculates the next value of height to be used in the control function. The results are here (using a step size of 0.01):
 
-
+![First result with a numerial method](Results/graphicsWithEstimator.jpg)
 
 3) Using the Runge-Kutta 4th order : The Runge-Kutta method is a numerical method used to solve ordinary differential equations (ODEs). It works by approximating the solution of an ODE at a given point in time, based on the solution at previous points. The method involves taking a series of steps, with each step calculating an approximation of the solution at a new point in time. The most commonly used variant of the method is the fourth-order Runge-Kutta method, which calculates the solution at the new point in time using a weighted average of four approximations based on the slope of the ODE at different points in the step.
 
 
-The results are here:
+The results are here (using a step size of 0.001):
 
+![Second result with a numerical method](Results/graphicsWithRungeKuttaMethod.jpg)
 
+### Conclusion
 
+- Using a estimator to calculate the integral of height in time it has some error that in some systems could cause undesired behaviors. The height will never reach the desired value, not even letting the system work for a long period of time. 
 
+- With the Runge-Kutta of 4th order te result is better but it needs more iterations to get a good approximation of the height. This method allows the system to reach the desired value after a long time period of time. 
 
+- In both methods there will be an error, but to decrease it is better use the numerical method of integration of Runge-Kutta of 4th order. 
 
 
 
