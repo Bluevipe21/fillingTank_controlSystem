@@ -109,6 +109,25 @@ This system works as a feedback network so we only need to control de input flow
 
 And in the case of making the implementation in a PLC is necessary to work with two PID's blocks for both valves. For PLC's must of the branchs work with PI control functions because in industrial level there will be signal disturbances. And in industrial level in must of the cases it is used the feedfoward network.
 
+In case of using a control system like the presented here, the integration part has to be worked with a numerical integration method. There are two options to do this:
+1) Using a estimator: Basically this method consist in work the differential part of the equation as a measure of a slope.
+
+$\frac{dh}{dt} = \frac{\Delta h}{\Delta t} = \frac{Q_{in}}{A} - h(\frac{\rho g}{R})$
+
+Where the value $\Delta t$ is the step size of the estimator. And $\Delta h$ is the difference between the actual point of the function and the __estimated__ future value of the function of height.
+
+$h(t_{i+1}) - h(t_{i}) = \frac{Q_{in} \Delta t}{A} - h(t_{i}) \Delta t (\frac{\rho g}{R})$
+
+$h(t_{i+1}) = h(t_{i})(1 - \Delta t (\frac{\rho g}{R})) + \Delta t \frac{Q_{in}(t_{i})}{A}$
+
+This final equation calculates the next value of height to be used in the control function. The results are here:
+
+
+
+3) Using the Runge-Kutta 4th order : The Runge-Kutta method is a numerical method used to solve ordinary differential equations (ODEs). It works by approximating the solution of an ODE at a given point in time, based on the solution at previous points. The method involves taking a series of steps, with each step calculating an approximation of the solution at a new point in time. The most commonly used variant of the method is the fourth-order Runge-Kutta method, which calculates the solution at the new point in time using a weighted average of four approximations based on the slope of the ODE at different points in the step.
+
+
+The results are here:
 
 
 
